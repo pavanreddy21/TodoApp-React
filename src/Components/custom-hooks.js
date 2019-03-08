@@ -1,3 +1,5 @@
+//Used Hooks to understand the working of hooks ,can also be done using state
+
 import { useState } from "react";
 
 export const useInputValue = (initialValue = "") => {

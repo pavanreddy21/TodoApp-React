@@ -10,94 +10,9 @@ import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import { TaskVariety } from "../../TaskVariety";
+import { TaskVariety } from "../TaskVariety";
 import Fab from "@material-ui/core/Fab";
-import Cards from "../Cards/Cards";
-
-const drawerWidth = 240;
-
-const styles = theme => ({
-  root: {
-    display: "flex"
-  },
-  toolbar: {
-    paddingRight: 24 // keep right padding when drawer closed
-  },
-  toolbarIcon: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: "0 8px",
-    ...theme.mixins.toolbar
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  appBarShift: {
-    // marginLeft: drawerWidth,
-    // width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  },
-  menuButton: {
-    marginLeft: 12,
-    marginRight: 36
-  },
-  menuButtonHidden: {
-    // display: 'none',
-  },
-  title: {
-    flexGrow: 1
-  },
-  drawerPaper: {
-    position: "relative",
-    whiteSpace: "nowrap",
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  },
-  drawerPaperClose: {
-    overflowX: "hidden",
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    }),
-
-    width: 0,
-    [theme.breakpoints.up("sm")]: {
-      width: 0
-    }
-  },
-  appBarSpacer: theme.mixins.toolbar,
-  content: {
-    display: "flex",
-
-    flexGrow: 1,
-    flexWrap: "wrap",
-    paddingTop: theme.spacing.unit * 15,
-    paddingLeft: theme.spacing.unit * 5,
-    height: "100vh",
-    overflow: "auto"
-  },
-  heading: {
-    width: "1300px"
-  },
-
-  tableContainer: {
-    width: 335
-  },
-  h5: {
-    marginBottom: theme.spacing.unit * 2
-  }
-});
+import Cards from "../Components/Cards/Cards";
 
 class HomePage extends React.Component {
   state = {
@@ -281,5 +196,84 @@ class HomePage extends React.Component {
 HomePage.propTypes = {
   classes: PropTypes.object.isRequired
 };
+
+// Styling using Jss
+const drawerWidth = 240;
+
+const styles = theme => ({
+  root: {
+    display: "flex"
+  },
+  toolbar: {
+    paddingRight: 24 // keep right padding when drawer closed
+  },
+  toolbarIcon: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    padding: "0 8px",
+    ...theme.mixins.toolbar
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    })
+  },
+
+  menuButton: {
+    marginLeft: 12,
+    marginRight: 36
+  },
+  menuButtonHidden: {
+    // display: 'none',
+  },
+  title: {
+    flexGrow: 1
+  },
+  drawerPaper: {
+    position: "relative",
+    whiteSpace: "nowrap",
+    width: drawerWidth,
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen
+    })
+  },
+  drawerPaperClose: {
+    overflowX: "hidden",
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    }),
+
+    width: 0,
+    [theme.breakpoints.up("sm")]: {
+      width: 0
+    }
+  },
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    display: "flex",
+
+    flexGrow: 1,
+    flexWrap: "wrap",
+    paddingTop: theme.spacing.unit * 15,
+    paddingLeft: theme.spacing.unit * 5,
+    height: "100vh",
+    overflow: "auto"
+  },
+  heading: {
+    width: "1300px"
+  },
+
+  tableContainer: {
+    width: 335
+  },
+  h5: {
+    marginBottom: theme.spacing.unit * 2
+  }
+});
 
 export default withStyles(styles)(HomePage);
