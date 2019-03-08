@@ -183,7 +183,7 @@ class HomePage extends React.Component {
             addTodo={this.addTodo}
             checkTodo={this.checkTodo}
             removeTodo={this.removeTodo}
-            disp={this.state.currentTodo}
+            
             setCurrentTodo={this.setCurrentTodo}
             onModalClose={this.onModalClose}
           />

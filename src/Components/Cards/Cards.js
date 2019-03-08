@@ -26,10 +26,10 @@ const styles = theme => ({
 });
 
 function Cards(props) {
-  console.log(props);
+ 
   const { classes } = props;
 
-  console.log(props.disp);
+ 
 
   return (
     <div className={classes.content}>
@@ -40,17 +40,16 @@ function Cards(props) {
           addTodo={props.addTodo}
           checkTodo={props.checkTodo}
           removeTodo={props.removeTodo}
-          disp={props.disp}
           setCurrentTodo={props.setCurrentTodo}
         />
       </div>
 
       <div className={classes.TaskDescriptionCard}>
-        {props.disp !== "" ? (
+        {props.state.currentTodo !== "" ? (
           <TaskDescriptionCard
             state={props.state}
             onModalClose={props.onModalClose}
-            disp={props.disp}
+           
           />
         ) : (
           <div />
