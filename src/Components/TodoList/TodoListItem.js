@@ -36,7 +36,7 @@ const TodoListItem = function(props) {
           {remainderText !== "" ? (
             <ListItem>
               <Chip label={remainderText.substring(1, 11)} />
-              <Chip label={remainderText.substring(12, 17)} />
+              <Chip label={remainderText.substring(12, 17) + " UTC"} />
             </ListItem>
           ) : (
             ""
