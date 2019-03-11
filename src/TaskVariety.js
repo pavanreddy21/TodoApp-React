@@ -6,7 +6,7 @@ export function TaskVariety(props) {
   return (
     <div>
       <ListItem button>
-        <ListItemText primary="My Lists" />
+        <ListItemText primary="My Lists" color="blue"/>
       </ListItem>
       <ListItem button onClick={props.changeList.bind(this, "AllTasks")}>
         <ListItemText primary="All Tasks" />
