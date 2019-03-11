@@ -7,7 +7,7 @@ import TaskDescriptionCard from "./TaskDescriptionCard";
 
 const styles = theme => ({
   TaskDescriptionCard: {
-    paddingLeft: "40px",
+    paddingLeft: "70px",
     width: 335
   },
   tableContainer: {

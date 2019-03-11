@@ -84,7 +84,7 @@ class HomePage extends React.Component {
     this.setState(presentState);
   };
 
-  setCurrentTodo = text => {
+  setCurrentTodo = (text) => {
     var presentState = { ...this.state };
     presentState.currentTodo = text;
     this.setState(presentState);
@@ -102,7 +102,7 @@ class HomePage extends React.Component {
     this.setState(presentState);
   };
 
-  removeTodo = idx => {
+  removeTodo = (idx) => {
     var presentState = { ...this.state };
 
     presentState.tasklist[

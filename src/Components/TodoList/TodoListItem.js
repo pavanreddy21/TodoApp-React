@@ -23,14 +23,14 @@ const TodoListItem = function(props) {
   }
 
   return (
-    <Card raised={true}>
+    <Card raised={true}  >
       <ListItem divider={props.divider}>
         <Checkbox
           onClick={props.onCheckBoxToggle}
           checked={props.checked}
           disableRipple
         />
-        <ButtonBase onClick={props.setCurrentTodo.bind(this, props.id)}>
+        <ButtonBase onClick={props.setCurrentTodo.bind(this, props.id)} >
           <ListItemText primary={props.txt} />
 
           {remainderText !== "" ? (
@@ -44,7 +44,7 @@ const TodoListItem = function(props) {
         </ButtonBase>
         <ListItemSecondaryAction>
           {props.checked ? (
-            <ClearIcon aria-label="Delete Todo" onClick={props.onButtonClick} />
+            <ClearIcon aria-label="Delete Todo" onClick={props.onButtonClick } id="deleteButton"/>
           ) : (
             ""
           )}

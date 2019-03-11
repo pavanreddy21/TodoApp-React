@@ -10,9 +10,16 @@ import { Paper, Card } from "@material-ui/core";
 import TodoList from "../TodoList/TodoList";
 
 const styles = {
-  root: {
-    height: "540px",
-    width: "100%",
+  innerCard: {
+    height: "380px",
+    width: "375px",
+    overflowX: "auto",
+    marginRight: "200px"
+  }
+  ,
+  outerCard:{
+    height: "450px",
+    width: "375px",
     overflowX: "auto",
     marginRight: "200px"
   }
@@ -28,15 +35,11 @@ function PrimaryCard(props) {
   const { classes } = props;
 
   return (
-    <Card raised={true} className={classes.root}>
-      {/* <Paper className={classes.root}> */}
+    <Card raised={true} className={classes.outerCard}>
+    <Card  className={classes.innerCard}>
+     
 
-      <AddTodo
-        inputValue={inputValue}
-        onInputChange={changeInput}
-        onButtonClick={clearInputAndAddTodo}
-        onInputKeyPress={event => keyInput(event, clearInputAndAddTodo)}
-      />
+      
       <TodoList
         state={props.state}
         items={props.state.tasklist[props.state.currentList].today}
@@ -44,9 +47,17 @@ function PrimaryCard(props) {
         onItemRemove={idx => props.removeTodo(idx)}
         setCurrentTodo={idx => props.setCurrentTodo(idx)}
       />
+      
 
       {/* </Paper> */}
     </Card>
+    <AddTodo
+        inputValue={inputValue}
+        onInputChange={changeInput}
+        onButtonClick={clearInputAndAddTodo}
+        onInputKeyPress={event => keyInput(event, clearInputAndAddTodo)}
+      />
+      </Card>
   );
 }
 

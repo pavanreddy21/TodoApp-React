@@ -22,8 +22,8 @@ function getModalStyle() {
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    width: 355,
-    height: 542
+    width: 375,
+    height: 450
   },
   paper: {
     height: 140,

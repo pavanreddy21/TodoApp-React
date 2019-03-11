@@ -52,8 +52,9 @@ function AddTodo(props) {
   //       onChange={props.onInputChange}
   //       onKeyPress={props.onInputKeyPress}
   return (
-    <Paper style={{ margin: 16, padding: 16 }}>
-      <Grid container>
+    <React.Fragment>
+    {/* <Paper style={{ margin: 16, padding: 16 }}> */}
+      <Grid container style={{  padding: 14 }}>
         <Grid xs={10} md={11} item style={{ paddingRight: 16 }}>
           <InputBase
             id="bootstrap-input"
@@ -74,7 +75,8 @@ function AddTodo(props) {
           </Fab>
         </Grid>
       </Grid>
-    </Paper>
+    {/* </Paper> */}
+    </React.Fragment>
   );
 }
 
