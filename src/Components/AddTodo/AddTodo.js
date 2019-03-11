@@ -71,7 +71,7 @@ function AddTodo(props) {
         </Grid>
         <Grid xs={2} md={1} item>
           <Fab size="small" onClick={props.onButtonClick}>
-            <ArrowUpwardIcon />
+            <ArrowUpwardIcon color={props.inputValue==="" ? "disabled":"primary"}/>
           </Fab>
         </Grid>
       </Grid>

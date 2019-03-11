@@ -13,14 +13,13 @@ const styles = {
   innerCard: {
     height: "380px",
     width: "375px",
-    overflowX: "auto",
+    overflowY: "auto",
     marginRight: "200px"
   }
   ,
   outerCard:{
     height: "450px",
     width: "375px",
-    overflowX: "auto",
     marginRight: "200px"
   }
 };

@@ -6,19 +6,22 @@ export function TaskVariety(props) {
   return (
     <div>
       <ListItem button>
-        <ListItemText primary="My Lists" color="blue"/>
+      <i class="material-icons">
+check_circle_outline
+</i> <p style={{color:"blue",fontWeight:"700",fontSize:"18px"}}>MY LISTS</p>
+        {/* <ListItemText primary="My Lists" style={{color:"blue"}}/> */}
       </ListItem>
       <ListItem button onClick={props.changeList.bind(this, "AllTasks")}>
-        <ListItemText primary="All Tasks" />
+        <ListItemText style={{paddingLeft:"30px"}} primary="All Tasks"  />
       </ListItem>
       <ListItem button onClick={props.changeList.bind(this, "personal")}>
-        <ListItemText primary="Personal" />
+        <ListItemText style={{paddingLeft:"30px"}} primary="Personal" />
       </ListItem>
       <ListItem button onClick={props.changeList.bind(this, "work")}>
-        <ListItemText primary="Work" />
+        <ListItemText style={{paddingLeft:"30px"}} primary="Work" />
       </ListItem>
       <ListItem button onClick={props.changeList.bind(this, "groceryList")}>
-        <ListItemText primary="Grocery List" />
+        <ListItemText style={{paddingLeft:"30px"}} primary="Grocery List" />
       </ListItem>
     </div>
   );

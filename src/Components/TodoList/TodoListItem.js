@@ -13,6 +13,7 @@ import {
 
 import ClearIcon from "@material-ui/icons/Clear";
 const TodoListItem = function(props) {
+
    let textStyle;
   if(props.checked) 
   textStyle={textDecoration:"line-through"};
@@ -20,20 +21,16 @@ const TodoListItem = function(props) {
 
 
 
-  console.log("In todolistItem");
-  console.log(props.state);
-  console.log(props.state.currentTodo !== "");
+
   var remainderText = "";
   if (props.remainder !== "") {
     remainderText = JSON.stringify(props.remainder);
-    var dat = new Date(remainderText);
-    console.log(dat);
   }
 
 
 
   return (
-    <Card raised={true}  >
+    <Card  >
       <ListItem divider={props.divider}>
         <Checkbox
           onClick={props.onCheckBoxToggle}
