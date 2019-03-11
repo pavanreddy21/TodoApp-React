@@ -10,8 +10,16 @@ import {
   Card
 } from "@material-ui/core";
 
+
 import ClearIcon from "@material-ui/icons/Clear";
 const TodoListItem = function(props) {
+   let textStyle;
+  if(props.checked) 
+  textStyle={textDecoration:"line-through"};
+  else   textStyle={textDecoration:"none"};
+
+
+
   console.log("In todolistItem");
   console.log(props.state);
   console.log(props.state.currentTodo !== "");
@@ -22,6 +30,8 @@ const TodoListItem = function(props) {
     console.log(dat);
   }
 
+
+
   return (
     <Card raised={true}  >
       <ListItem divider={props.divider}>
@@ -31,7 +41,7 @@ const TodoListItem = function(props) {
           disableRipple
         />
         <ButtonBase onClick={props.setCurrentTodo.bind(this, props.id)} >
-          <ListItemText primary={props.txt} />
+          <ListItemText primary={props.txt} style={textStyle} />
 
           {remainderText !== "" ? (
             <ListItem>
