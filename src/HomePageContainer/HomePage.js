@@ -19,11 +19,11 @@ class HomePage extends React.Component {
     open: true,
     tasklist: {
       "AllTasks": { today: [] },
-      "personal": { today: [] },
-      "work": {
+      "Personal": { today: [] },
+      "Work": {
         today: []
       },
-      "groceryList": {
+      "GroceryList": {
         today: []
       }
     },
