@@ -24,6 +24,7 @@ const styles = theme => ({
     flexGrow: 1,
     width: 375,
     height: 450
+    
   },
   paper: {
     height: 140,

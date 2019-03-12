@@ -4,6 +4,7 @@ import PrimaryCard from "./PrimaryCard";
 import { withStyles } from "@material-ui/core/styles";
 
 import TaskDescriptionCard from "./TaskDescriptionCard";
+import AlternateCard from "./AlternateCard";
 
 const styles = theme => ({
   TaskDescriptionCard: {
@@ -52,7 +53,7 @@ function Cards(props) {
            
           />
         ) : (
-          <div />
+          <AlternateCard/>
         )}
       </div>
     </div>
