@@ -18,12 +18,12 @@ class HomePage extends React.Component {
   state = {
     open: true,
     tasklist: {
-      AllTasks: { today: [] },
-      personal: { today: [] },
-      work: {
+      "AllTasks": { today: [] },
+      "personal": { today: [] },
+      "work": {
         today: []
       },
-      groceryList: {
+      "groceryList": {
         today: []
       }
     },
@@ -168,7 +168,7 @@ class HomePage extends React.Component {
           <div className={classes.toolbarIcon} />
           <Divider />
           <List>
-            <TaskVariety changeList={this.onCurrentListChange} />
+            <TaskVariety state={this.state} changeList={this.onCurrentListChange} />
           </List>
           <Divider />
         </Drawer>

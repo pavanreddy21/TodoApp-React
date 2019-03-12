@@ -38,7 +38,7 @@ const TodoListItem = function(props) {
           disableRipple
         />
         
-          <ListItemText primary={props.txt} style={textStyle} button onClick={props.setCurrentTodo.bind(this, props.id)}/>
+          <ListItemText primary={props.txt} style={textStyle}  onClick={props.setCurrentTodo.bind(this, props.id)}/>
 
           {remainderText !== "" ? (
             <ListItem>
