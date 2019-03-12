@@ -12,7 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { TaskVariety } from "../TaskVariety";
 import Fab from "@material-ui/core/Fab";
-import Cards from "../Components/Cards/Cards";
+import Cards from "../Components/Cards/CardsContainer";
 
 class HomePage extends React.Component {
   state = {
