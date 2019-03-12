@@ -1,8 +1,18 @@
 import React from "react";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import InputBase from '@material-ui/core/InputBase';
+import { useInputValue } from "./Components/custom-hooks";
+
+
 
 export function TaskVariety(props) {
+  const { inputValue, changeInput, clearInput, keyInput } = useInputValue();
+
+  const clearInputAndAddList = _ => {
+    clearInput();
+    props.onTaskListChange(inputValue);
+  };
 
   return (
     <div>
@@ -19,7 +29,14 @@ check_circle_outline
       </ListItem>
       ))
       }
-      
+      <ListItem>
+      <InputBase style={{paddingLeft:"30px"}} placeholder="+New List" 
+                  value={inputValue}
+                   
+                   onChange={changeInput}
+                   onKeyPress={event => keyInput(event, clearInputAndAddList)}
+      />
+      </ListItem>
     </div>
   );
 }

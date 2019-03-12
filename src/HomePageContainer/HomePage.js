@@ -114,6 +114,11 @@ class HomePage extends React.Component {
     console.log(presentState.tasklist.AllTasks.today);
     this.setState(presentState);
   };
+  onTaskListChange=(newitem)=>{
+    var presentState = { ...this.state };
+   presentState.tasklist[newitem]={today:[]}
+   this.setState(presentState);
+  }
 
   render() {
     const { classes } = this.props;
@@ -168,7 +173,7 @@ class HomePage extends React.Component {
           <div className={classes.toolbarIcon} />
           <Divider />
           <List>
-            <TaskVariety state={this.state} changeList={this.onCurrentListChange} />
+            <TaskVariety state={this.state} changeList={this.onCurrentListChange}  onTaskListChange={this.onTaskListChange}/>
           </List>
           <Divider />
         </Drawer>
