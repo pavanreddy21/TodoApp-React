@@ -24,7 +24,6 @@ const styles = theme => ({
     flexGrow: 1,
     width: 375,
     height: 450
-    
   },
   paper: {
     height: 140,
@@ -82,7 +81,7 @@ class TaskDescriptionCard extends React.Component {
             {
               this.props.state.tasklist[this.props.state.currentList].today[
                 this.props.state.currentTodo
-              ].txt
+              ].text
             }
           </h2>
           <Grid container className={classes.root} spacing={16}>

@@ -8,20 +8,14 @@ import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 
 const styles = {
   bootstrapRoot: {
-    "label + &": {
-      //marginTop: theme.spacing.unit * 3,
-    }
+    "label + &": {}
   },
   bootstrapInput: {
     borderRadius: "25px",
     position: "relative",
-    // backgroundColor: theme.palette.common.white,
     border: "1px solid #ced4da",
     fontSize: 16,
     width: "100%",
-    // padding: '10px 12px',
-    // transition: theme.transitions.create(['border-color', 'box-shadow']),
-    // Use the system font instead of the default Roboto font.
     fontFamily: [
       "-apple-system",
       "BlinkMacSystemFont",
@@ -47,14 +41,9 @@ const styles = {
 
 function AddTodo(props) {
   const { classes } = props;
-
-  // value={props.inputValue}
-  //       onChange={props.onInputChange}
-  //       onKeyPress={props.onInputKeyPress}
   return (
     <React.Fragment>
-    {/* <Paper style={{ margin: 16, padding: 16 }}> */}
-      <Grid container style={{  padding: 14 }}>
+      <Grid container style={{ padding: 14 }}>
         <Grid xs={10} md={11} item style={{ paddingRight: 16 }}>
           <InputBase
             id="bootstrap-input"
@@ -71,11 +60,12 @@ function AddTodo(props) {
         </Grid>
         <Grid xs={2} md={1} item>
           <Fab size="small" onClick={props.onButtonClick}>
-            <ArrowUpwardIcon color={props.inputValue==="" ? "disabled":"primary"}/>
+            <ArrowUpwardIcon
+              color={props.inputValue === "" ? "disabled" : "primary"}
+            />
           </Fab>
         </Grid>
       </Grid>
-    {/* </Paper> */}
     </React.Fragment>
   );
 }

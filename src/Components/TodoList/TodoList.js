@@ -9,8 +9,6 @@ const TodoList = function(props) {
   console.log("check");
   return (
     <>
-      {/* style={{ overflow: "scroll" }} */}
-      {/* <Paper style={{ margin: 16 }}> */}
       {props.items.length > 0 && (
         <List>
           {props.items.map((todo, idx) => (

@@ -18,12 +18,12 @@ class HomePage extends React.Component {
   state = {
     open: true,
     tasklist: {
-      "AllTasks": { today: [] },
-      "Personal": { today: [] },
-      "Work": {
+      AllTasks: { today: [] },
+      Personal: { today: [] },
+      Work: {
         today: []
       },
-      "GroceryList": {
+      GroceryList: {
         today: []
       }
     },
@@ -39,13 +39,9 @@ class HomePage extends React.Component {
     } else this.setState({ open: true });
   };
 
-  handleDrawerClose = () => {
-    this.setState({ open: false });
-  };
-
-  onCurrentListChange = txt => {
+  onCurrentListChange = list => {
     var presentState = { ...this.state };
-    presentState.currentList = txt;
+    presentState.currentList = list;
     presentState.currentTodo = "";
     this.setState(presentState);
   };
@@ -56,12 +52,12 @@ class HomePage extends React.Component {
     this.setState(presentState);
   };
 
-  addTodo = txt => {
+  addTodo = text => {
     var presentState = { ...this.state };
 
-    if (txt !== "") {
+    if (text !== "") {
       presentState.tasklist[presentState.currentList].today.push({
-        txt,
+        text,
         checked: false,
         remainder: ""
       });
@@ -84,7 +80,7 @@ class HomePage extends React.Component {
     this.setState(presentState);
   };
 
-  setCurrentTodo = (text) => {
+  setCurrentTodo = text => {
     var presentState = { ...this.state };
     presentState.currentTodo = text;
     this.setState(presentState);
@@ -92,19 +88,14 @@ class HomePage extends React.Component {
 
   onModalClose = text => {
     var presentState = { ...this.state };
-    // console.log(text);
     presentState.tasklist[presentState.currentList].today[
       presentState.currentTodo
     ].remainder = text;
-    // console.log(st.tasklist[st.currentList].today[this.state.currentTodo]);
-    // console.log("yo");
-    // console.log(this.state.tasklist[this.state.currentList].today[this.state.currentTodo].txt);
     this.setState(presentState);
   };
 
-  removeTodo = (idx) => {
+  removeTodo = idx => {
     var presentState = { ...this.state };
-
     presentState.tasklist[
       presentState.currentList
     ].today = presentState.tasklist[presentState.currentList].today.filter(
@@ -114,15 +105,16 @@ class HomePage extends React.Component {
     console.log(presentState.tasklist.AllTasks.today);
     this.setState(presentState);
   };
-  onTaskListChange=(newitem)=>{
+
+  onTaskListChange = newitem => {
     var presentState = { ...this.state };
-   presentState.tasklist[newitem]={today:[]}
-   this.setState(presentState);
-  }
+    presentState.tasklist[newitem] = { today: [] };
+    this.setState(presentState);
+  };
 
   render() {
     const { classes } = this.props;
-    //  console.log(Object.keys(this.state.tasklist));
+
     return (
       <div className={classes.root}>
         <CssBaseline />
@@ -173,7 +165,11 @@ class HomePage extends React.Component {
           <div className={classes.toolbarIcon} />
           <Divider />
           <List>
-            <TaskVariety state={this.state} changeList={this.onCurrentListChange}  onTaskListChange={this.onTaskListChange}/>
+            <TaskVariety
+              state={this.state}
+              changeList={this.onCurrentListChange}
+              onTaskListChange={this.onTaskListChange}
+            />
           </List>
           <Divider />
         </Drawer>
@@ -188,7 +184,6 @@ class HomePage extends React.Component {
             addTodo={this.addTodo}
             checkTodo={this.checkTodo}
             removeTodo={this.removeTodo}
-            
             setCurrentTodo={this.setCurrentTodo}
             onModalClose={this.onModalClose}
           />
@@ -202,7 +197,7 @@ HomePage.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-// Styling using Jss
+// Styling using JSS
 const drawerWidth = 240;
 
 const styles = theme => ({

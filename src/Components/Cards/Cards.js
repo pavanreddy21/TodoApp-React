@@ -19,18 +19,12 @@ const styles = theme => ({
 
     flexGrow: 1,
     flexWrap: "wrap",
-    //paddingTop: theme.spacing.unit * 15,
-    //paddingLeft: theme.spacing.unit * 5,
-    //height: '100vh',
     overflow: "auto"
   }
 });
 
 function Cards(props) {
- 
   const { classes } = props;
-
- 
 
   return (
     <div className={classes.content}>
@@ -50,10 +44,9 @@ function Cards(props) {
           <TaskDescriptionCard
             state={props.state}
             onModalClose={props.onModalClose}
-           
           />
         ) : (
-          <AlternateCard/>
+          <AlternateCard />
         )}
       </div>
     </div>

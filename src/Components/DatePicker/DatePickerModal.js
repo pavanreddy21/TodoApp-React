@@ -4,9 +4,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Button from "@material-ui/core/Button";
 
-// CSS Modules, react-datepicker-cssmodules.css
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-
 class DatePickerModal extends React.Component {
   state = {};
   constructor(props) {
@@ -26,9 +23,6 @@ class DatePickerModal extends React.Component {
   }
 
   addRemainder() {
-    // console.log(this.props);
-    // console.log(this.state.startDate);
-
     this.props.onModalClose(this.state.startDate);
     this.props.handleClose();
   }
