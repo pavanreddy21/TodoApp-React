@@ -41,10 +41,10 @@ const TodoListItem = function(props) {
           <ListItemText primary={props.txt} style={textStyle}  onClick={props.setCurrentTodo.bind(this, props.id)}/>
 
           {remainderText !== "" ? (
-            <ListItem>
+            <React.Fragment>
               <Chip label={remainderText.substring(1, 11)} />
               <Chip label={remainderText.substring(12, 17) + " UTC"} />
-            </ListItem>
+              </React.Fragment>
           ) : (
             ""
           )}
